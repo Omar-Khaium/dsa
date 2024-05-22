@@ -1,6 +1,6 @@
 import '../../features/arrays/arrays.dart';
+import '../../features/bubble_sort/bubble_sort.dart';
 import '../../features/home/home.dart';
-// import '../config/config.dart';
 import 'shared.dart';
 
 final router = GoRouter(
@@ -22,6 +22,15 @@ final router = GoRouter(
         name: ArraysPage.name,
         restorationId: ArraysPage.name,
         child: ArraysPage(),
+      ),
+    ),
+    GoRoute(
+      path: BubbleSortPage.path,
+      name: BubbleSortPage.name,
+      pageBuilder: (context, state) => const MaterialPage(
+        name: BubbleSortPage.name,
+        restorationId: BubbleSortPage.name,
+        child: BubbleSortPage(),
       ),
     ),
   ],

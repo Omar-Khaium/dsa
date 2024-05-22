@@ -1,4 +1,4 @@
-part of '../pages/arrays.dart';
+part of '../pages/bubble_sort.dart';
 
 class _PreviewWidget extends StatefulWidget {
   final Function({

@@ -1,11 +1,13 @@
 import '../shared/shared.dart';
 //! mason:linking-imports - DO NOT REMOVE THIS COMMENT --------------------------->
+import '../../features/bubble_sort/bubble_sort.dart';
 import '../../features/arrays/arrays.dart';
 import '../../features/home/home.dart';
 
 part 'dependencies.dart';
 part 'network_certificates.dart';
 //! mason:linking-dependencies - DO NOT REMOVE THIS COMMENT ---------------------->
+part 'dependencies/bubble_sort.dart';
 part 'dependencies/arrays.dart';
 part 'dependencies/home.dart';
 
@@ -41,7 +43,8 @@ class AppConfig {
           isDense: true,
           filled: true,
           fillColor: theme.backgroundSecondary,
-          labelStyle: TextStyles.body(context: context, color: theme.textPrimary),
+          labelStyle:
+              TextStyles.body(context: context, color: theme.textPrimary),
           contentPadding: const EdgeInsets.all(16.0),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
@@ -88,7 +91,8 @@ class AppConfig {
             padding: const EdgeInsets.all(16),
           ),
         ),
-        textSelectionTheme: TextSelectionThemeData(cursorColor: theme.textPrimary),
+        textSelectionTheme:
+            TextSelectionThemeData(cursorColor: theme.textPrimary),
         iconTheme: IconThemeData(color: theme.textPrimary, size: 20),
         visualDensity: VisualDensity.adaptivePlatformDensity,
         appBarTheme: AppBarTheme(

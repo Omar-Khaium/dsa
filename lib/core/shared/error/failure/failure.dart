@@ -1,4 +1,5 @@
 //! mason:linking-failures - DO NOT REMOVE THIS COMMENT --------------------------->
+part 'bubble_sort.dart';
 part 'arrays.dart';
 part 'home.dart';
 

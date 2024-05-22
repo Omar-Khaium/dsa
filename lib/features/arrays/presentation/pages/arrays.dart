@@ -1,5 +1,3 @@
-import 'package:collection/collection.dart';
-
 import '../../../../core/shared/shared.dart';
 
 part '../widgets/setup.dart';

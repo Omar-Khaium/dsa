@@ -24,7 +24,6 @@ export 'dart:io';
 export 'dart:convert';
 export 'dart:math';
 
-
 //! ----------------- 3rd party -----------------
 export 'package:cached_network_image/cached_network_image.dart';
 export 'package:flutter/material.dart' hide ThemeExtension;
@@ -43,3 +42,5 @@ export 'package:google_fonts/google_fonts.dart';
 export 'package:either_dart/either.dart';
 export 'package:flutter_screenutil/flutter_screenutil.dart';
 export 'package:fl_chart/fl_chart.dart';
+export 'package:collection/collection.dart';
+

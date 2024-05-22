@@ -1,5 +1,6 @@
 import '../../../../core/shared/shared.dart';
 import '../../../arrays/arrays.dart';
+import '../../../bubble_sort/bubble_sort.dart';
 
 class HomePage extends StatelessWidget {
   static const String path = '/';
@@ -35,6 +36,22 @@ class HomePage extends StatelessWidget {
                   color: theme.textSecondary,
                 ),
                 onTap: () => context.pushNamed(ArraysPage.name),
+              ),
+              SizedBox(height: context.verticalMargin8),
+              ListTile(
+                title: Text(
+                  'Bubble Sort',
+                  style: context.textStyle16Medium(color: theme.textPrimary),
+                ),
+                subtitle: Text(
+                  'Sort an array from the lowest value to the highest value.',
+                  style: context.textStyle12Light(color: theme.textSecondary),
+                ),
+                trailing: Icon(
+                  Icons.arrow_forward_ios,
+                  color: theme.textSecondary,
+                ),
+                onTap: () => context.pushNamed(BubbleSortPage.name),
               ),
             ],
           ),

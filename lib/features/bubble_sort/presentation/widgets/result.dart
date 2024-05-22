@@ -1,27 +1,15 @@
-part of '../pages/arrays.dart';
+part of '../pages/bubble_sort.dart';
 
-class _PreviewWidget extends StatefulWidget {
-  final Function({
-    required List<int> array,
-  }) onDone;
-  final int length;
-  const _PreviewWidget({
-    required this.onDone,
-    required this.length,
+class _ResultWidget extends StatelessWidget {
+  final VoidCallback onReset;
+  final List<int> array;
+  final int index;
+
+  const _ResultWidget({
+    required this.onReset,
+    required this.array,
+    required this.index,
   });
-
-  @override
-  State<_PreviewWidget> createState() => _PreviewWidgetState();
-}
-
-class _PreviewWidgetState extends State<_PreviewWidget> {
-  late List<int> array;
-
-  @override
-  void initState() {
-    super.initState();
-    generate();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,31 +22,32 @@ class _PreviewWidgetState extends State<_PreviewWidget> {
             shrinkWrap: true,
             children: [
               Text(
-                "Generate a random array",
+                "Lowest values: ${array[index]}",
                 style: context.textStyle20Heavy(color: theme.textPrimary),
               ),
               SizedBox(height: context.verticalMargin16),
               SizedBox(height: context.verticalMargin16),
-              SizedBox(height: context.verticalMargin16),
               AspectRatio(
-                aspectRatio: 1,
+                aspectRatio: 1.6,
                 child: BarChart(
                   BarChartData(
-                    barGroups: array
-                        .map(
-                          (e) => BarChartGroupData(
-                            x: e,
-                            barRods: [
-                              BarChartRodData(
-                                fromY: 0,
-                                toY: e.toDouble(),
-                                width: context.horizontalMargin4,
-                                color: theme.textSecondary,
-                              ),
-                            ],
-                          ),
-                        )
-                        .toList(),
+                    barGroups: array.mapIndexed(
+                      (barIndex, value) {
+                        return BarChartGroupData(
+                          x: value,
+                          barRods: [
+                            BarChartRodData(
+                              fromY: 0,
+                              toY: value.toDouble(),
+                              width: context.horizontalMargin4,
+                              color: index == barIndex
+                                  ? theme.positive
+                                  : theme.textSecondary,
+                            ),
+                          ],
+                        );
+                      },
+                    ).toList(),
                     titlesData: FlTitlesData(
                       show: true,
                       bottomTitles: AxisTitles(
@@ -90,21 +79,13 @@ class _PreviewWidgetState extends State<_PreviewWidget> {
               ),
               SizedBox(height: context.verticalMargin16),
               SizedBox(height: context.verticalMargin16),
-              TextButton(
-                onPressed: () => generate(),
-                child: Text(
-                  "Regenerate",
-                  style:
-                      context.textStyle16Heavy(color: theme.backgroundPrimary),
-                ),
-              ),
               SizedBox(height: context.verticalMargin16),
               ElevatedButton(
-                onPressed: () => widget.onDone(
-                  array: array,
-                ),
+                onPressed: () {
+                  context.pop();
+                },
                 child: Text(
-                  "Start",
+                  "Go back",
                   style: context.textStyle16Heavy(color: Colors.white),
                 ),
               ),
@@ -113,13 +94,5 @@ class _PreviewWidgetState extends State<_PreviewWidget> {
         );
       },
     );
-  }
-
-  void generate() {
-    final newArray =
-        List.generate(widget.length, (index) => Random().nextInt(99) + 1);
-    setState(() {
-      array = newArray;
-    });
   }
 }

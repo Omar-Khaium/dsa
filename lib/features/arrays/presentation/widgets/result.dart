@@ -40,7 +40,9 @@ class _ResultWidget extends StatelessWidget {
                               fromY: 0,
                               toY: value.toDouble(),
                               width: context.horizontalMargin4,
-                              color: index == barIndex ? theme.positive : theme.textSecondary,
+                              color: index == barIndex
+                                  ? theme.positive
+                                  : theme.textSecondary,
                             ),
                           ],
                         );
@@ -54,13 +56,17 @@ class _ResultWidget extends StatelessWidget {
                           reservedSize: context.verticalMargin16,
                           getTitlesWidget: (value, meta) => Text(
                             value.toInt().toString(),
-                            style: context.textStyle8Light(color: theme.textPrimary),
+                            style: context.textStyle8Light(
+                                color: theme.textPrimary),
                           ),
                         ),
                       ),
-                      leftTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
-                      topTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
-                      rightTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                      leftTitles: const AxisTitles(
+                          sideTitles: SideTitles(showTitles: false)),
+                      topTitles: const AxisTitles(
+                          sideTitles: SideTitles(showTitles: false)),
+                      rightTitles: const AxisTitles(
+                          sideTitles: SideTitles(showTitles: false)),
                     ),
                     borderData: FlBorderData(
                       show: true,

@@ -43,4 +43,4 @@ export 'package:either_dart/either.dart';
 export 'package:flutter_screenutil/flutter_screenutil.dart';
 export 'package:fl_chart/fl_chart.dart';
 export 'package:collection/collection.dart';
-
+export 'package:flutter/foundation.dart' hide binarySearch, mergeSort;

@@ -41,7 +41,7 @@ class _PreviewWidgetState extends State<_PreviewWidget> {
               SizedBox(height: context.verticalMargin16),
               SizedBox(height: context.verticalMargin16),
               AspectRatio(
-                aspectRatio: 1,
+                aspectRatio: 4,
                 child: BarChart(
                   BarChartData(
                     barGroups: array
@@ -67,17 +67,13 @@ class _PreviewWidgetState extends State<_PreviewWidget> {
                           reservedSize: context.verticalMargin16,
                           getTitlesWidget: (value, meta) => Text(
                             value.toInt().toString(),
-                            style: context.textStyle8Light(
-                                color: theme.textPrimary),
+                            style: context.textStyle8Light(color: theme.textPrimary),
                           ),
                         ),
                       ),
-                      leftTitles: const AxisTitles(
-                          sideTitles: SideTitles(showTitles: false)),
-                      topTitles: const AxisTitles(
-                          sideTitles: SideTitles(showTitles: false)),
-                      rightTitles: const AxisTitles(
-                          sideTitles: SideTitles(showTitles: false)),
+                      leftTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                      topTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                      rightTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
                     ),
                     borderData: FlBorderData(
                       show: true,
@@ -94,8 +90,7 @@ class _PreviewWidgetState extends State<_PreviewWidget> {
                 onPressed: () => generate(),
                 child: Text(
                   "Regenerate",
-                  style:
-                      context.textStyle16Heavy(color: theme.backgroundPrimary),
+                  style: context.textStyle16Heavy(color: theme.backgroundPrimary),
                 ),
               ),
               SizedBox(height: context.verticalMargin16),
@@ -116,8 +111,7 @@ class _PreviewWidgetState extends State<_PreviewWidget> {
   }
 
   void generate() {
-    final newArray =
-        List.generate(widget.length, (index) => Random().nextInt(99) + 1);
+    final newArray = List.generate(widget.length, (index) => Random().nextInt(99) + 1);
     setState(() {
       array = newArray;
     });

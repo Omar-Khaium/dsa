@@ -1,4 +1,3 @@
-BASE_HREF = '/'
 GITHUB_REPO = 'https://github.com/Omar-Khaium/dsa-exhibition.git'
 BUILD_VERSION := $(shell grep 'version:' pubspec.yaml | awk '{print $$2}')
 
@@ -14,9 +13,7 @@ deploy-web:
 	@clear
 
 	@echo "Building for web..."
-	sed -i '' 's|$FLUTTER_BASE_HREF|'${BASE_HREF}'|g' web/index.html
 	flutter build web --release
-	sed -i '' 's|'${BASE_HREF}'|$FLUTTER_BASE_HREF|g' web/index.html
 
 	@clear
 

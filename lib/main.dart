@@ -22,7 +22,7 @@ class MainApp extends StatelessWidget {
     FlutterNativeSplash.remove();
 
     return ScreenUtilInit(
-      designSize: const Size(360, 800),
+      designSize: const Size(1920, 1080),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (_, child) => child!,

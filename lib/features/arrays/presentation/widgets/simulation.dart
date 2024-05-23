@@ -122,7 +122,7 @@ class _SimulationWidgetState extends State<_SimulationWidget> {
               SizedBox(height: context.verticalMargin16),
               SizedBox(height: context.verticalMargin16),
               AspectRatio(
-                aspectRatio: 1.6,
+                aspectRatio: 4,
                 child: BarChart(
                   BarChartData(
                     barGroups: widget.array.mapIndexed(
@@ -154,17 +154,13 @@ class _SimulationWidgetState extends State<_SimulationWidget> {
                           reservedSize: context.verticalMargin16,
                           getTitlesWidget: (value, meta) => Text(
                             value.toInt().toString(),
-                            style: context.textStyle8Light(
-                                color: theme.textPrimary),
+                            style: context.textStyle8Light(color: theme.textPrimary),
                           ),
                         ),
                       ),
-                      leftTitles: const AxisTitles(
-                          sideTitles: SideTitles(showTitles: false)),
-                      topTitles: const AxisTitles(
-                          sideTitles: SideTitles(showTitles: false)),
-                      rightTitles: const AxisTitles(
-                          sideTitles: SideTitles(showTitles: false)),
+                      leftTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                      topTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                      rightTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
                     ),
                     borderData: FlBorderData(
                       show: true,
@@ -184,8 +180,7 @@ class _SimulationWidgetState extends State<_SimulationWidget> {
                   },
                   child: Text(
                     "Restart",
-                    style: context.textStyle16Heavy(
-                        color: theme.backgroundPrimary),
+                    style: context.textStyle16Heavy(color: theme.backgroundPrimary),
                   ),
                 ),
               if (completed) ...[
